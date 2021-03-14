@@ -12,7 +12,7 @@
     <fragment
         android:id="@+id/reminder"
         android:name="com.example.weatherchekk.reminder"
-        android:label="Reminder"
+        android:label="Reminders"
         tools:layout="@layout/fragment_reminder" />
     <fragment
         android:id="@+id/credits"

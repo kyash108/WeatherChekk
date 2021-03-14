@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/homePage"
-            android:icon="@drawable/ic_baseline_grain_24"
+            android:icon="@drawable/sun"
             android:title="WeatherChekk" />
         <item
             android:id="@+id/reminder"
-            android:icon="@drawable/ic_baseline_grain_24"
-            android:title="Reminder" />
+            android:icon="@drawable/ic_baseline_doorbell_24"
+            android:title="Reminders" />
         <item
             android:id="@+id/contact"
-            android:icon="@drawable/ic_baseline_grain_24"
+            android:icon="@drawable/communicate"
             android:title="Contact Me" />
         <item
             android:id="@+id/credits"
-            android:icon="@drawable/ic_baseline_grain_24"
+            android:icon="@drawable/research"
             android:title="Credits" />
     </group>
 </menu>
