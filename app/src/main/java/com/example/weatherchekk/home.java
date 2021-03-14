@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import static com.example.weatherchekk.MainActivity.fab;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link home#newInstance} factory method to
@@ -59,6 +61,7 @@ public class home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        fab.hide();
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 }

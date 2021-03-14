@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import static com.example.weatherchekk.MainActivity.fab;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link reminder#newInstance} factory method to
@@ -59,6 +61,7 @@ public class reminder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        fab.show();
         return inflater.inflate(R.layout.fragment_reminder, container, false);
     }
 }
