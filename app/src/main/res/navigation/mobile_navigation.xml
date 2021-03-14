@@ -9,4 +9,19 @@
         android:name="com.example.weatherchekk.home"
         android:label="WeatherChekk"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/reminder"
+        android:name="com.example.weatherchekk.reminder"
+        android:label="Reminder"
+        tools:layout="@layout/fragment_reminder" />
+    <fragment
+        android:id="@+id/credits"
+        android:name="com.example.weatherchekk.credits"
+        android:label="Credits"
+        tools:layout="@layout/fragment_credits" />
+    <fragment
+        android:id="@+id/contact"
+        android:name="com.example.weatherchekk.contact"
+        android:label="Contact Me"
+        tools:layout="@layout/fragment_contact" />
 </navigation>
