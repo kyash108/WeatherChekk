@@ -1,11 +1,14 @@
 package com.example.weatherchekk;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import static com.example.weatherchekk.MainActivity.fab;
 
@@ -60,7 +63,45 @@ public class contact extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
         fab.hide();
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        Button facebook=view.findViewById(R.id.facebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri facebook = Uri.parse("https://www.facebook.com/kyash108/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, facebook);
+                startActivity(intent);
+            }
+        });
+        Button instagram = view.findViewById(R.id.instagram);
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri profile = Uri.parse("https://www.instagram.com/yashk108/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, profile);
+                startActivity(intent);
+            }
+        });
+        Button linkedin = view.findViewById(R.id.linkedin);
+        linkedin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri page = Uri.parse("https://www.linkedin.com/in/yash-k-3628b4164/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, page);
+                startActivity(intent);
+            }
+        });
+
+        Button website = view.findViewById(R.id.website);
+        website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://ykumar.scweb.ca/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 }
