@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:background="#FF7900"
+        android:background="#FE942C"
         android:contentDescription="TODO"
         app:srcCompat="@drawable/sun" />
 
