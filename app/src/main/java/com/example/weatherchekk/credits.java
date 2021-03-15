@@ -3,10 +3,14 @@ package com.example.weatherchekk;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 import static com.example.weatherchekk.MainActivity.fab;
 
@@ -61,7 +65,21 @@ public class credits extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        View view= inflater.inflate(R.layout.fragment_credits, container, false);
         fab.hide();
-        return inflater.inflate(R.layout.fragment_credits, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.recycle);
+        ArrayList<Term> terms = new ArrayList<>();
+        terms.add(new Term(R.drawable.linkedin, " Picture of- Linkedin Icon \n Photo by:- Freepik \n bit.ly/3lhtvN4"));
+        terms.add(new Term(R.drawable.sun, " Picture of- Weather Icon \n Photo by:- Good Ware \n http://bit.ly/2Oo6P1P"));
+        terms.add(new Term(R.drawable.communicate, " Picture of- Contact me Icon \n Photo by:- Srip\n http://bit.ly/3rNPbCW"));
+        terms.add(new Term(R.drawable.research, " Picture of- Credits Icon \n Photo by:- UltimateArm\n https://bit.ly/3bNRUGI"));
+        terms.add(new Term(R.drawable.instagram, " Picture of- Instagram Icon \n Photo by:- Freepik\n https://bit.ly/3bIiNvP"));
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new CustomRecycleViewAdapter(terms,getContext()));
+
+        return view;
+
     }
 }
