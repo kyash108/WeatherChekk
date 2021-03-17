@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.weatherchekk.pojo.ReminderDatabase;
 import com.example.weatherchekk.pojo.reminds;
 
 import java.util.ArrayList;
@@ -79,8 +80,11 @@ public class reminder extends Fragment {
 //                Navigation.findNavController(view).navigate(R.id.createUpdateFragment,extra);
 //            }
 //        });
-
+        ReminderDatabase db = new ReminderDatabase(getContext());
+//        ArrayList<reminds> reminders = new ArrayList<>();
         ArrayList<reminds> reminders = new ArrayList<>();
+        db.addProject(new reminds(0,1,10,"PM","Toronto"));
+        db.close();
 //        reminders.add(new reminds("11","10","AM","Windsor",""));
 //        reminders.add(new reminds("10","09","PM","Toronto",""));
 //        reminders.add(new reminds("02","09","PM","Toronto",""));

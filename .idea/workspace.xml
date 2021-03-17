@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5b32b4bb-285a-4d06-be80-4834ff0c2852" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/ReminderDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/ReminderDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/reminds.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/reminds.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/reminder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,10 +158,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1615820173960">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1616010536569">
+      <screen x="0" y="25" width="1440" height="815" />
     </state>
-    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.815@0.25.1440.815" timestamp="1615770928500" />
+    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.815@0.25.1440.815" timestamp="1616010536569" />
     <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.816@0.25.1440.816" timestamp="1615816380490" />
     <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.817@0.25.1440.817" timestamp="1615820173960" />
     <state x="458" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615766195491">
@@ -175,9 +177,9 @@
       <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state x="622" y="214" key="AndroidCreateXmlResourceDialog/0.25.1440.815@0.25.1440.815" timestamp="1615813933967" />
-    <state x="502" y="164" width="670" height="676" key="search.everywhere.popup" timestamp="1615771831063">
+    <state x="502" y="164" width="670" height="676" key="search.everywhere.popup" timestamp="1616010526005">
       <screen x="0" y="25" width="1440" height="815" />
     </state>
-    <state x="502" y="164" width="670" height="676" key="search.everywhere.popup/0.25.1440.815@0.25.1440.815" timestamp="1615771831063" />
+    <state x="502" y="164" width="670" height="676" key="search.everywhere.popup/0.25.1440.815@0.25.1440.815" timestamp="1616010526005" />
   </component>
 </project>
