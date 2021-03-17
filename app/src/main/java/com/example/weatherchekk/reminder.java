@@ -81,9 +81,9 @@ public class reminder extends Fragment {
 //        });
 
         ArrayList<reminds> reminders = new ArrayList<>();
-        reminders.add(new reminds("11","10","AM","Windsor",""));
-        reminders.add(new reminds("10","09","PM","Toronto",""));
-        reminders.add(new reminds("02","09","PM","Toronto",""));
+//        reminders.add(new reminds("11","10","AM","Windsor",""));
+//        reminders.add(new reminds("10","09","PM","Toronto",""));
+//        reminders.add(new reminds("02","09","PM","Toronto",""));
 
         RecyclerView recyclerView = view.findViewById(R.id.firstRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
