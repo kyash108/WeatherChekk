@@ -41,7 +41,6 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         reminds reminds = reminders.get(position);
-//        holder.edit.setImageResource(reminds.getEdit());
         holder.hour.setText(reminds.getHour());
         holder.minute.setText(reminds.getMinute());
         holder.am.setText(reminds.getAm());
@@ -51,7 +50,7 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
             public void onClick(View v) {
                 Bundle extra = new Bundle();
                 extra.putInt(createupdates.ACTION_TYPE,createupdates.UPDATE);
-//                extra.putParcelable(createupdates.views, reminders.get(position));
+                extra.putParcelable(createupdates.views, (Parcelable) reminders.get(position));
                 Navigation.findNavController(v).navigate(R.id.createupdates,extra);
             }
         });
@@ -59,10 +58,7 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
 
     @Override
     public int getItemCount() {
-        if (reminders != null){
             return reminders.size();
-        }
-        return 0;
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -74,7 +70,6 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-//            this.edit = itemView.findViewById(R.id.edit);
             this.hour = itemView.findViewById(R.id.hour);
             this.minute = itemView.findViewById(R.id.minute);
             this.am = itemView.findViewById(R.id.am);
@@ -85,7 +80,7 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
 
         @Override
         public void onClick(View v) {
-            new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure you want to delete the reminder?").setIcon(android.R.drawable.ic_dialog_alert).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure you want to delete the reminder ?").setIcon(android.R.drawable.ic_dialog_alert).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     ReminderDatabase db = new ReminderDatabase(context);

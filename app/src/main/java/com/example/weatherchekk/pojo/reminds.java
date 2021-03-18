@@ -1,8 +1,9 @@
 package com.example.weatherchekk.pojo;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
-public class reminds {
+public class reminds implements Parcelable {
     private int id;
     private String hour;
     private String minute;
@@ -15,24 +16,45 @@ public class reminds {
     }
 
 
+    protected reminds(Parcel in) {
+        id = in.readInt();
+        hour = in.readString();
+        minute = in.readString();
+        am = in.readString();
+        city = in.readString();
+        edit = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(hour);
+        dest.writeString(minute);
+        dest.writeString(am);
+        dest.writeString(city);
+        dest.writeString(edit);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<reminds> CREATOR = new Creator<reminds>() {
+        @Override
+        public reminds createFromParcel(Parcel in) {
+            return new reminds(in);
+        }
+
+        @Override
+        public reminds[] newArray(int size) {
+            return new reminds[size];
+        }
+    };
+
     public String getHour() {
         return hour;
     }
-//    protected reminds(Parcel in) {
-//        id = in.readInt();
-//        city = in.readString();
-//        hour = in.readString();
-//        minute = in.readString();
-//        edit = in.readString();
-//    }
-//
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeInt(id);
-//        dest.writeString(city);
-//        dest.writeString(hour);
-//        dest.writeString(minute);
-//    }
-
 
     public void setHour(String hour) {
         this.hour = hour;
@@ -58,7 +80,7 @@ public class reminds {
         return am;
     }
 
-    public void setAm(String ampm) {
+    public void setAm(String am) {
         this.am = am;
     }
 

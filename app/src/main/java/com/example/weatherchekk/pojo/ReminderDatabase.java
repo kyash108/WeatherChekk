@@ -95,10 +95,10 @@ public class ReminderDatabase extends SQLiteOpenHelper {
     public int updateData(reminds Reminds){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_CITY, Reminds.getCity());
         values.put(COLUMN_HOUR, Reminds.getHour());
         values.put(COLUMN_MINUTE, Reminds.getMinute());
         values.put(COLUMN_AM, Reminds.getAm());
+        values.put(COLUMN_CITY, Reminds.getCity());
         values.put(COLUMN_EDIT, Reminds.getEdit());
         return db.update(TABLE_REMINDER,values,COLUMN_ID+ "=?", new String[]{String.valueOf(Reminds.getId())});
     }
