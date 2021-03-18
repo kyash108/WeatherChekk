@@ -14,17 +14,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/createupdates.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/createupdates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/ReminderDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/ReminderDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/reminds.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/pojo/reminds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/remindAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/remindAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/reminder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/animation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/anim/animation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/enter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/anim/enter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,11 +168,11 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1616026680564">
+    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser" timestamp="1616096158422">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.815@0.25.1440.815" timestamp="1616010536569" />
-    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.816@0.25.1440.816" timestamp="1616026680564" />
+    <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.816@0.25.1440.816" timestamp="1616096158422" />
     <state x="631" y="143" key="#com.intellij.ide.util.MemberChooser/0.25.1440.817@0.25.1440.817" timestamp="1615820173960" />
     <state x="458" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615766195491">
       <screen x="0" y="25" width="1440" height="816" />
@@ -189,26 +188,30 @@
     </state>
     <state x="622" y="214" key="AndroidCreateXmlResourceDialog/0.25.1440.815@0.25.1440.815" timestamp="1615813933967" />
     <state x="622" y="214" key="AndroidCreateXmlResourceDialog/0.25.1440.816@0.25.1440.816" timestamp="1616026166343" />
-    <state width="1022" height="185" key="GridCell.Tab.0.bottom" timestamp="1616043649636">
+    <state x="450" y="142" key="AndroidThemeDialog" timestamp="1616093972838">
+      <screen x="0" y="25" width="1440" height="816" />
+    </state>
+    <state x="450" y="142" key="AndroidThemeDialog/0.25.1440.816@0.25.1440.816" timestamp="1616093972838" />
+    <state width="1396" height="185" key="GridCell.Tab.0.bottom" timestamp="1616097533368">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
-    <state width="1022" height="185" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1616043649636" />
-    <state width="1022" height="185" key="GridCell.Tab.0.center" timestamp="1616043649635">
+    <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1616097533368" />
+    <state width="1396" height="185" key="GridCell.Tab.0.center" timestamp="1616097533367">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
-    <state width="1022" height="185" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1616043649635" />
-    <state width="1022" height="185" key="GridCell.Tab.0.left" timestamp="1616043649635">
+    <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1616097533367" />
+    <state width="1396" height="185" key="GridCell.Tab.0.left" timestamp="1616097533367">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1616021294918" />
-    <state width="1022" height="185" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1616043649635" />
-    <state width="1022" height="185" key="GridCell.Tab.0.right" timestamp="1616043649636">
+    <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1616097533367" />
+    <state width="1396" height="185" key="GridCell.Tab.0.right" timestamp="1616097533368">
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
-    <state width="1022" height="185" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1616043649636" />
+    <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1616097533368" />
     <state x="502" y="164" width="670" height="676" key="search.everywhere.popup" timestamp="1616010526005">
       <screen x="0" y="25" width="1440" height="815" />
     </state>

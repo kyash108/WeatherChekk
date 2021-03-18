@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import com.example.weatherchekk.pojo.ReminderDatabase;
 import com.example.weatherchekk.pojo.reminds;
+import com.google.android.material.snackbar.Snackbar;
+
 import static com.example.weatherchekk.MainActivity.fab;
 
 public class createupdates extends Fragment {
@@ -79,6 +81,7 @@ public class createupdates extends Fragment {
                     } else if (getArguments().getInt(ACTION_TYPE) == CREATE) {
                         db.addProject(Reminder);
                     }
+
                     db.close();
                     Navigation.findNavController(view).popBackStack();
                 }
