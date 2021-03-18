@@ -24,7 +24,11 @@ public class ReminderDatabase extends SQLiteOpenHelper {
 
     public static final String CREATE_REMINDERS_TABLE = "CREATE TABLE "+
             TABLE_REMINDER+"("+COLUMN_ID+" INTEGER PRIMARY KEY,"+
-            COLUMN_CITY + " TEXT, " + COLUMN_HOUR + " INTEGER, " + COLUMN_MINUTE + " INTEGER, " + COLUMN_AM + " TEXT, "+ COLUMN_EDIT + " TEXT) ";
+            COLUMN_HOUR + " TEXT, " +
+            COLUMN_MINUTE + " TEXT, " +
+            COLUMN_AM + " TEXT, "+
+            COLUMN_CITY + " TEXT, " +
+            COLUMN_EDIT + " TEXT) ";
 
 
     public ReminderDatabase(@Nullable Context context) {
@@ -61,8 +65,8 @@ public class ReminderDatabase extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             remind = new reminds(
                     cursor.getInt(0),
-                    cursor.getInt(1),
-                    cursor.getInt(2),
+                    cursor.getString(1),
+                    cursor.getString(2),
                     cursor.getString(3),
                     cursor.getString(4),
                     cursor.getString(5));
@@ -78,8 +82,8 @@ public class ReminderDatabase extends SQLiteOpenHelper {
         while (cursor.moveToNext()){
             reminders.add(new reminds(
                     cursor.getInt(0),
-                    cursor.getInt(1),
-                    cursor.getInt(2),
+                    cursor.getString(1),
+                    cursor.getString(2),
                     cursor.getString(3),
                     cursor.getString(4),
                     cursor.getString(5)));

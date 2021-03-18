@@ -4,37 +4,41 @@ import android.os.Parcel;
 
 public class reminds {
     private int id;
-    private int hour;
-    private int minute;
+    private String hour;
+    private String minute;
     private String am;
     private String city;
     private String edit;
 
+    public reminds() {
 
-    public int getHour() {
+    }
+
+
+    public String getHour() {
         return hour;
     }
 //    protected reminds(Parcel in) {
 //        id = in.readInt();
 //        city = in.readString();
-//        hour = in.readInt();
-//        minute = in.readInt();
+//        hour = in.readString();
+//        minute = in.readString();
 //        edit = in.readString();
 //    }
 //
 //    public void writeToParcel(Parcel dest, int flags) {
 //        dest.writeInt(id);
 //        dest.writeString(city);
-//        dest.writeInt(hour);
-//        dest.writeInt(minute);
+//        dest.writeString(hour);
+//        dest.writeString(minute);
 //    }
 
 
-    public void setHour(int hour) {
+    public void setHour(String hour) {
         this.hour = hour;
     }
 
-    public int getMinute() {
+    public String getMinute() {
         return minute;
     }
 
@@ -46,7 +50,7 @@ public class reminds {
         this.id = id;
     }
 
-    public void setMinute(int minute) {
+    public void setMinute(String minute) {
         this.minute = minute;
     }
 
@@ -54,7 +58,7 @@ public class reminds {
         return am;
     }
 
-    public void setAm(String am) {
+    public void setAm(String ampm) {
         this.am = am;
     }
 
@@ -74,15 +78,15 @@ public class reminds {
         this.edit = edit;
     }
 
-//    public reminds(String hour, String minute, String am, String city, String edit) {
-//        this.hour = hour;
-//        this.minute = minute;
-//        this.am = am;
-//        this.city = city;
+    public reminds(String hour, String minute, String am, String city) {
+        this.hour = hour;
+        this.minute = minute;
+        this.am = am;
+        this.city = city;
 //        this.edit = edit;
-//    }
+    }
 
-    public reminds(int id, int hour, int minute, String am, String city) {
+    public reminds(int id, String hour, String minute, String am, String city) {
         this.id = id;
         this.hour = hour;
         this.minute = minute;
@@ -90,7 +94,7 @@ public class reminds {
         this.city = city;
     }
 
-    public reminds(int id, int hour, int minute, String am, String city, String edit) {
+    public reminds(int id, String hour, String minute, String am, String city, String edit) {
         this.id = id;
         this.hour = hour;
         this.minute = minute;
@@ -103,5 +107,4 @@ public class reminds {
     public String toString() {
         return city;
     }
-
 }

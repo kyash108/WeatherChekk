@@ -13,7 +13,11 @@
         android:id="@+id/reminder"
         android:name="com.example.weatherchekk.reminder"
         android:label="Reminders"
-        tools:layout="@layout/fragment_reminder" />
+        tools:layout="@layout/fragment_reminder" >
+        <action
+            android:id="@+id/action_reminder_to_createupdates"
+            app:destination="@id/createupdates" />
+    </fragment>
     <fragment
         android:id="@+id/credits"
         android:name="com.example.weatherchekk.credits"
@@ -24,4 +28,9 @@
         android:name="com.example.weatherchekk.contact"
         android:label="Contact Me"
         tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/createupdates"
+        android:name="com.example.weatherchekk.createupdates"
+        android:label="Reminders"
+        tools:layout="@layout/fragment_createupdates" />
 </navigation>

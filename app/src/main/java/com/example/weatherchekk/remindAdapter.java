@@ -1,15 +1,22 @@
 package com.example.weatherchekk;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weatherchekk.pojo.ReminderDatabase;
 import com.example.weatherchekk.pojo.reminds;
 
 import java.util.ArrayList;
@@ -39,6 +46,15 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
         holder.minute.setText(reminds.getMinute());
         holder.am.setText(reminds.getAm());
         holder.city.setText(reminds.getCity());
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle extra = new Bundle();
+                extra.putInt(createupdates.ACTION_TYPE,createupdates.UPDATE);
+//                extra.putParcelable(createupdates.views, reminders.get(position));
+                Navigation.findNavController(v).navigate(R.id.createupdates,extra);
+            }
+        });
     }
 
     @Override
@@ -49,8 +65,8 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
         return 0;
     }
 
-    class CustomViewHolder extends RecyclerView.ViewHolder{
-        protected TextView edit;
+    class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        protected ImageView edit;
         protected TextView hour;
         protected TextView minute;
         protected TextView am;
@@ -63,7 +79,24 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
             this.minute = itemView.findViewById(R.id.minute);
             this.am = itemView.findViewById(R.id.am);
             this.city = itemView.findViewById(R.id.city);
+            this.edit = itemView.findViewById(R.id.edit);
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure you want to delete the reminder?").setIcon(android.R.drawable.ic_dialog_alert).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    ReminderDatabase db = new ReminderDatabase(context);
+                    db.deleteProject(reminders.get(getLayoutPosition()).getId());
+                    reminders.remove(getLayoutPosition());
+                    notifyItemRemoved(getAdapterPosition());
+                    db.close();
+                }
+            })
+                    .setNegativeButton("No", null)
+                    .show();
         }
     }
 }

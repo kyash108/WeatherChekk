@@ -1,7 +1,9 @@
 package com.example.weatherchekk;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TimePicker;
 
 import com.example.weatherchekk.pojo.ReminderDatabase;
 import com.example.weatherchekk.pojo.reminds;
@@ -65,29 +68,24 @@ public class reminder extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_reminder, container, false);
-
         fab.show();
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Bundle extra = new Bundle();
-//                extra.putInt(createUpdateFragment.ACTION_TYPE, createUpdateFragment.CREATE);
-//                Navigation.findNavController(view).navigate(R.id.createUpdateFragment,extra);
-//            }
-//        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle extra = new Bundle();
+                extra.putInt(createupdates.ACTION_TYPE, createupdates.CREATE);
+                Navigation.findNavController(view).navigate(R.id.createupdates,extra);
+            }
+        });
         ReminderDatabase db = new ReminderDatabase(getContext());
-//        ArrayList<reminds> reminders = new ArrayList<>();
-        ArrayList<reminds> reminders = new ArrayList<>();
-        db.addProject(new reminds(0,1,10,"PM","Toronto"));
+        ArrayList<reminds> reminders = db.getAllProject();
         db.close();
-//        reminders.add(new reminds("11","10","AM","Windsor",""));
-//        reminders.add(new reminds("10","09","PM","Toronto",""));
-//        reminders.add(new reminds("02","09","PM","Toronto",""));
 
         RecyclerView recyclerView = view.findViewById(R.id.firstRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
