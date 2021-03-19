@@ -75,6 +75,7 @@ public class credits extends Fragment {
         terms.add(new Term(R.drawable.communicate, " Picture of- Contact me Icon \n Photo by:- Srip\n http://bit.ly/3rNPbCW"));
         terms.add(new Term(R.drawable.research, " Picture of- Credits Icon \n Photo by:- UltimateArm\n https://bit.ly/3bNRUGI"));
         terms.add(new Term(R.drawable.instagram, " Picture of- Instagram Icon \n Photo by:- Freepik\n https://bit.ly/3bIiNvP"));
+        terms.add(new Term(R.drawable.background, " Picture of- Weather Background\n Photo by:- Frédéric Perez\n http://bit.ly/3bYYUkk"));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new CustomRecycleViewAdapter(terms,getContext()));

@@ -136,8 +136,8 @@ public class viewpager2 extends Fragment {
             visibility.setText(mParam9);
         }
         if(mParam10 !=null) {
-            TextView uv = view.findViewById(R.id.uv);
-            uv.setText(mParam10);
+            TextView humidity = view.findViewById(R.id.humidity);
+            humidity.setText(mParam10);
         }
         return view;
     }

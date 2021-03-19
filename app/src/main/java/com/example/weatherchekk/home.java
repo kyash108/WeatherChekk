@@ -87,7 +87,7 @@ public class home extends Fragment {
 //                return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","UV");
 
                 case 0:
-                    return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","UV");
+                    return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","Humidity");
                 default:
                     return viewpager2.newInstance("qw","","","","","","","","","");
             }
