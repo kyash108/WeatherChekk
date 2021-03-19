@@ -8,9 +8,24 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.weatherchekk.pojo.reminds;
+import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static com.example.weatherchekk.MainActivity.fab;
 
@@ -21,6 +36,13 @@ import static com.example.weatherchekk.MainActivity.fab;
  */
 public class home extends Fragment {
     ViewPager2 newViewPager;
+    double temperature;
+    String temp;
+    String city = "Calgary";
+    String apiKey = "b22d2146812e4f4143b2462365bd3706";
+    String url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid="+apiKey;
+    double temperatureMin;
+    TextView textView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,6 +93,33 @@ public class home extends Fragment {
         newViewPager = view.findViewById(R.id.viewPager2);
         newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
         newViewPager.setPageTransformer(new ZoomOutPageTransformer());
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject mainObj = response.getJSONObject("main");
+                    temperature = mainObj.getInt("temp");
+//                    temperatureMin = mainObj.getInt("temp_min");
+                    temp = String.valueOf(temperature);
+                    System.out.println("Temp is "+temp);
+//                    System.out.println("Temp min "+temperatureMin);
+                    Snackbar.make(view, temp, Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Snackbar.make(view, error.toString(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        tempSingleton.getInstance(getContext()).getRequestQueue().add(request);
+
         return view;
     }
 
@@ -87,9 +136,9 @@ public class home extends Fragment {
 //                return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","UV");
 
                 case 0:
-                    return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","Humidity");
+//                    return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","Humidity");
                 default:
-                    return viewpager2.newInstance("qw","","","","","","","","","");
+                    return viewpager2.newInstance("Windsor","6:30 AM","6:30Pm","NW 30Km/hr",temp+"\u2103","1 \u2103","7 \u2103","8 \u2103","16 KM","15");
             }
         }
 
