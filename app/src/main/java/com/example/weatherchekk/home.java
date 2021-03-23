@@ -26,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.weatherchekk.pojo.reminds;
 import com.google.android.material.snackbar.Snackbar;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -44,13 +45,14 @@ public class home extends Fragment {
     ViewPager2 newViewPager;
     String cityWindsor = "Windsor";
     String cityToronto = "Toronto";
-    String city="";
+    String city="delhi";
     String apiKey = "b22d2146812e4f4143b2462365bd3706";
+    String acuKey = "ilrmFXBe4oZ0g56gvnu8Kom00jCGt8uN";
     double temperature;
     double temperatureMin;
     double temperatureMax;
-    int sunrise;
-    int sunset;
+    String desc = "Cloud";
+    int pressure;
     double wind;
     double feelslike;
     double visibility;
@@ -60,8 +62,8 @@ public class home extends Fragment {
     double temperatureW;
     double temperatureMinW;
     double temperatureMaxW;
-    int sunriseW;
-    int sunsetW;
+    String descW;
+    int pressureW;
     double windW;
     double feelslikeW;
     double visibilityW;
@@ -71,8 +73,8 @@ public class home extends Fragment {
     double temperatureT;
     double temperatureMinT;
     double temperatureMaxT;
-    int sunriseT;
-    int sunsetT;
+    String descT;
+    int pressureT;
     double windT;
     double feelslikeT;
     double visibilityT;
@@ -127,10 +129,10 @@ public class home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         newViewPager = view.findViewById(R.id.viewPager2);
         newViewPager.setPageTransformer(new ZoomOutPageTransformer());
-        EditText search;
-        search = view.findViewById(R.id.search);
+//        EditText search;
+//        search = view.findViewById(R.id.search);
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+ cityWindsor +"&units=metric&appid="+apiKey;
+        String url = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+apiKey;
         String urlW = "https://api.openweathermap.org/data/2.5/weather?q="+ cityWindsor +"&units=metric&appid="+apiKey;
         String urlT = "https://api.openweathermap.org/data/2.5/weather?q="+ cityToronto +"&units=metric&appid="+apiKey;
 
@@ -139,24 +141,26 @@ public class home extends Fragment {
             public void onResponse(JSONObject response) {
                 try {
                     JSONObject mainObj = response.getJSONObject("main");
-                    temperature = mainObj.getInt("temp");
-                    temperatureMin = mainObj.getInt("temp_min");
-                    temperatureMax = mainObj.getInt("temp_max");
-                    humidity = mainObj.getInt("humidity");
-                    feelslike = mainObj.getInt("feels_like");
+                    temperature = mainObj.getDouble("temp");
+                    temperatureMin = mainObj.getDouble("temp_min");
+                    temperatureMax = mainObj.getDouble("temp_max");
+                    humidity = mainObj.getDouble("humidity");
+                    feelslike = mainObj.getDouble("feels_like");
+                    pressure = mainObj.getInt("pressure");
 
-                    JSONObject ss = response.getJSONObject("sys");
-                    sunrise = ss.getInt("sunrise");
-                    sunset = ss.getInt("sunset");
+                    city = response.getString("name");
+
+//                    JSONArray weathers = response.getJSONArray("weather");
+//                    String index = weathers.getString(1);
+
 
                     JSONObject winds = response.getJSONObject("wind");
                     wind = winds.getDouble("speed");
 
                     visibility = response.getDouble("visibility");
+                    visibility = visibility/1000;
 
-//                    SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy a");
-//                    format.setTimeZone(TimeZone.getTimeZone("GMT"));
-//                    Log.d("date", format.format(date));
+
 
                     newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
 
@@ -183,24 +187,22 @@ public class home extends Fragment {
             public void onResponse(JSONObject response) {
                 try {
                     JSONObject mainObj = response.getJSONObject("main");
-                    temperatureW = mainObj.getInt("temp");
-                    temperatureMinW = mainObj.getInt("temp_min");
-                    temperatureMaxW = mainObj.getInt("temp_max");
-                    humidityW = mainObj.getInt("humidity");
-                    feelslikeW = mainObj.getInt("feels_like");
+                    temperatureW = mainObj.getDouble("temp");
+                    temperatureMinW = mainObj.getDouble("temp_min");
+                    temperatureMaxW = mainObj.getDouble("temp_max");
+                    humidityW = mainObj.getDouble("humidity");
+                    feelslikeW = mainObj.getDouble("feels_like");
 
-                    JSONObject ss = response.getJSONObject("sys");
-                    sunriseW = ss.getInt("sunrise");
-                    sunsetW = ss.getInt("sunset");
+                    pressureW = mainObj.getInt("pressure");
+
+//                    JSONObject weather = response.getJSONObject("weather");
+//                    descW = weather.getString("description");
 
                     JSONObject winds = response.getJSONObject("wind");
                     windW = winds.getDouble("speed");
 
                     visibilityW = response.getDouble("visibility");
-
-//                    SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy a");
-//                    format.setTimeZone(TimeZone.getTimeZone("GMT"));
-//                    Log.d("date", format.format(date));
+                    visibilityW = visibilityW/1000;
 
                     newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
 
@@ -226,24 +228,22 @@ public class home extends Fragment {
             public void onResponse(JSONObject response) {
                 try {
                     JSONObject mainObj = response.getJSONObject("main");
-                    temperatureT = mainObj.getInt("temp");
-                    temperatureMinT = mainObj.getInt("temp_min");
-                    temperatureMaxT = mainObj.getInt("temp_max");
-                    humidityT = mainObj.getInt("humidity");
-                    feelslikeT = mainObj.getInt("feels_like");
+                    temperatureT = mainObj.getDouble("temp");
+                    temperatureMinT = mainObj.getDouble("temp_min");
+                    temperatureMaxT = mainObj.getDouble("temp_max");
+                    humidityT = mainObj.getDouble("humidity");
+                    feelslikeT = mainObj.getDouble("feels_like");
 
-                    JSONObject ss = response.getJSONObject("sys");
-                    sunriseT = ss.getInt("sunrise");
-                    sunsetT = ss.getInt("sunset");
+                    pressureT = mainObj.getInt("pressure");
+
+//                    JSONObject weather = response.getJSONObject("weather");
+//                    descT = weather.getString("description");
 
                     JSONObject winds = response.getJSONObject("wind");
                     windT = winds.getDouble("speed");
 
                     visibilityT = response.getDouble("visibility");
-
-//                    SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy a");
-//                    format.setTimeZone(TimeZone.getTimeZone("GMT"));
-//                    Log.d("date", format.format(date));
+                    visibilityT = visibilityT/1000;
 
                     newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
 
@@ -279,13 +279,13 @@ public class home extends Fragment {
 //                return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","UV");
 
                 case 0:
-                    return viewpager2.newInstance(cityWindsor,"Sunrise\n"+sunrise,"Sunset\n"+sunset,"Wind\n"+wind,temperature+"\u2103","L"+temperatureMin+"\u2103", "H"+temperatureMax+"\u2103","Feels Like\n"+feelslike+"\u2103","Visibility\n"+visibility,"Humidity\n"+humidity);
+                    return viewpager2.newInstance(city,"Description\n"+desc,"Pressure\n"+pressure,"Wind\n"+wind+"m/sec",temperature+"\u2103","L"+temperatureMin+"\u2103", "H"+temperatureMax+"\u2103","Feels Like\n"+feelslike+"\u2103","Visibility\n"+visibility+"Km","Humidity\n"+humidity+"%");
                 case 1:
-                    return viewpager2.newInstance(cityWindsor,"Sunrise\n"+sunriseW,"Sunset\n"+sunsetW,"Wind\n"+windW,temperatureW+"\u2103","L"+temperatureMinW+"\u2103", "H"+temperatureMaxW+"\u2103","Feels Like\n"+feelslikeW+"\u2103","Visibility\n"+visibilityW,"Humidity\n"+humidityW);
+                    return viewpager2.newInstance(cityWindsor,"Description\n"+descW,"Pressure\n"+pressureW,"Wind\n"+windW+"m/sec",temperatureW+"\u2103","L"+temperatureMinW+"\u2103", "H"+temperatureMaxW+"\u2103","Feels Like\n"+feelslikeW+"\u2103","Visibility\n"+visibilityW+"Km","Humidity\n"+humidityW+"%");
                 case 2:
-                    return viewpager2.newInstance(cityToronto,"Sunrise\n"+sunriseT,"Sunset\n"+sunsetT,"Wind\n"+windT,temperatureT+"\u2103","L"+temperatureMinT+"\u2103", "H"+temperatureMaxT+"\u2103","Feels Like\n"+feelslikeT+"\u2103","Visibility\n"+visibilityT,"Humidity\n"+humidityT);
+                    return viewpager2.newInstance(cityToronto,"Description\n"+descT,"Pressure\n"+pressureT,"Wind\n"+windT+"m/sec",temperatureT+"\u2103","L"+temperatureMinT+"\u2103", "H"+temperatureMaxT+"\u2103","Feels Like\n"+feelslikeT+"\u2103","Visibility\n"+visibilityT+"Km","Humidity\n"+humidityT+"%");
                 default:
-                    return viewpager2.newInstance("Windsor","6:30 AM","6:30Pm","NW 30Km/hr",temperature+"\u2103",temperatureMin+"\u2103","7 \u2103","8 \u2103","16 KM","15");
+                    return viewpager2.newInstance("Windsor","6:30 AM","6:30Pm","NW 30Km/hr",temperature+"\u2103",temperatureMin+"\u2103","7 \u2103","8 \u2103","16 KM","15%");
             }
         }
 

@@ -104,12 +104,12 @@ public class viewpager2 extends Fragment {
             cityNameHome.setText(mParam1);
         }
         if(mParam2 !=null) {
-            TextView sunrise = view.findViewById(R.id.sunrise);
-            sunrise.setText(mParam2);
+            TextView desc = view.findViewById(R.id.desc);
+            desc.setText(mParam2);
         }
         if(mParam3 !=null) {
-            TextView sunset = view.findViewById(R.id.sunset);
-            sunset.setText(mParam3);
+            TextView pressure = view.findViewById(R.id.pressure);
+            pressure.setText(mParam3);
         }
         if(mParam4 !=null) {
             TextView wind = view.findViewById(R.id.wind);

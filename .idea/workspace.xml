@@ -2,7 +2,10 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel_xl" />
+        <device id="pixel_3" />
+      </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
@@ -14,18 +17,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/WeatherChekk.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/WeatherChekk.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/createupdates.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/createupdates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/viewpager2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/viewpager2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_viewpager2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_viewpager2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,38 +197,42 @@
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="450" y="142" key="AndroidThemeDialog/0.25.1440.816@0.25.1440.816" timestamp="1616093972838" />
-    <state width="1068" height="144" key="GridCell.Tab.0.bottom" timestamp="1616469659265">
+    <state width="1031" height="206" key="GridCell.Tab.0.bottom" timestamp="1616518806263">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1068" height="144" key="GridCell.Tab.0.bottom/0.25.1440.813@0.25.1440.813" timestamp="1616469659265" />
+    <state width="1031" height="206" key="GridCell.Tab.0.bottom/0.25.1440.813@0.25.1440.813" timestamp="1616518806263" />
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1616097533368" />
     <state width="838" height="185" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1616125281041" />
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.819@0.25.1440.819" timestamp="1616132598270" />
-    <state width="1068" height="144" key="GridCell.Tab.0.center" timestamp="1616469659265">
+    <state width="1031" height="206" key="GridCell.Tab.0.center" timestamp="1616518806263">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1068" height="144" key="GridCell.Tab.0.center/0.25.1440.813@0.25.1440.813" timestamp="1616469659265" />
+    <state width="1031" height="206" key="GridCell.Tab.0.center/0.25.1440.813@0.25.1440.813" timestamp="1616518806263" />
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1616097533367" />
     <state width="838" height="185" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1616125281040" />
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.819@0.25.1440.819" timestamp="1616132598269" />
-    <state width="1068" height="144" key="GridCell.Tab.0.left" timestamp="1616469659264">
+    <state width="1031" height="206" key="GridCell.Tab.0.left" timestamp="1616518806262">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1068" height="144" key="GridCell.Tab.0.left/0.25.1440.813@0.25.1440.813" timestamp="1616469659264" />
+    <state width="1031" height="206" key="GridCell.Tab.0.left/0.25.1440.813@0.25.1440.813" timestamp="1616518806262" />
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1616021294918" />
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1616097533367" />
     <state width="838" height="185" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1616125281039" />
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.819@0.25.1440.819" timestamp="1616132598269" />
-    <state width="1068" height="144" key="GridCell.Tab.0.right" timestamp="1616469659265">
+    <state width="1031" height="206" key="GridCell.Tab.0.right" timestamp="1616518806263">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1068" height="144" key="GridCell.Tab.0.right/0.25.1440.813@0.25.1440.813" timestamp="1616469659265" />
+    <state width="1031" height="206" key="GridCell.Tab.0.right/0.25.1440.813@0.25.1440.813" timestamp="1616518806263" />
     <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
     <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1616097533368" />
     <state width="838" height="185" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1616125281040" />
     <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.819@0.25.1440.819" timestamp="1616132598270" />
+    <state x="100" y="125" width="1240" height="613" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1616518990284">
+      <screen x="0" y="25" width="1440" height="813" />
+    </state>
+    <state x="100" y="125" width="1240" height="613" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.25.1440.813@0.25.1440.813" timestamp="1616518990284" />
     <state x="395" y="194" key="run.anything.popup" timestamp="1616470949506">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
