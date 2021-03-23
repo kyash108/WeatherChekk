@@ -71,9 +71,10 @@ public class createupdates extends Fragment {
                     }
 
                     Reminder.setCity(city.getText().toString());
-                    Reminder.setHour(String.valueOf(i));
+                    Reminder.setHour(String.valueOf(i < 10 ? "0" : "") + i);
                     Reminder.setAm(timeSet);
-                    Reminder.setMinute(String.valueOf(timePicker.getMinute()));
+                    int j = (timePicker.getMinute());
+                    Reminder.setMinute(String.valueOf(j < 10 ? "0" : "") + j);
 
                     ReminderDatabase db = new ReminderDatabase(getContext());
                     if (getArguments().getInt(ACTION_TYPE) == UPDATE) {
