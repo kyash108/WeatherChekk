@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fontSize">
+        <item>18sp</item>
+        <item>22sp</item>
+        <item>24sp</item>
+    </string-array>
+</resources>

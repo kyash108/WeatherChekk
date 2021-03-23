@@ -23,11 +23,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/WeatherChekk.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/WeatherChekk.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/viewpager2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/viewpager2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_viewpager2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_viewpager2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/credits.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/weatherchekk/credits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,20 +86,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-view/Users/yash/Library/Android/sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="multi-representation-preview/Users/yash/Library/Android/sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    </key>
+    <key name="android.template.-943123991">
+      <recent name="com.example.weatherchekk" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.weatherchekk" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     </key>
   </component>
@@ -197,34 +212,34 @@
       <screen x="0" y="25" width="1440" height="816" />
     </state>
     <state x="450" y="142" key="AndroidThemeDialog/0.25.1440.816@0.25.1440.816" timestamp="1616093972838" />
-    <state width="1031" height="206" key="GridCell.Tab.0.bottom" timestamp="1616518806263">
+    <state width="1396" height="142" key="GridCell.Tab.0.bottom" timestamp="1616520101533">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1031" height="206" key="GridCell.Tab.0.bottom/0.25.1440.813@0.25.1440.813" timestamp="1616518806263" />
+    <state width="1396" height="142" key="GridCell.Tab.0.bottom/0.25.1440.813@0.25.1440.813" timestamp="1616520101533" />
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1616097533368" />
     <state width="838" height="185" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1616125281041" />
     <state width="1396" height="185" key="GridCell.Tab.0.bottom/0.25.1440.819@0.25.1440.819" timestamp="1616132598270" />
-    <state width="1031" height="206" key="GridCell.Tab.0.center" timestamp="1616518806263">
+    <state width="1396" height="142" key="GridCell.Tab.0.center" timestamp="1616520101533">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1031" height="206" key="GridCell.Tab.0.center/0.25.1440.813@0.25.1440.813" timestamp="1616518806263" />
+    <state width="1396" height="142" key="GridCell.Tab.0.center/0.25.1440.813@0.25.1440.813" timestamp="1616520101533" />
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1616097533367" />
     <state width="838" height="185" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1616125281040" />
     <state width="1396" height="185" key="GridCell.Tab.0.center/0.25.1440.819@0.25.1440.819" timestamp="1616132598269" />
-    <state width="1031" height="206" key="GridCell.Tab.0.left" timestamp="1616518806262">
+    <state width="1396" height="142" key="GridCell.Tab.0.left" timestamp="1616520101532">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1031" height="206" key="GridCell.Tab.0.left/0.25.1440.813@0.25.1440.813" timestamp="1616518806262" />
+    <state width="1396" height="142" key="GridCell.Tab.0.left/0.25.1440.813@0.25.1440.813" timestamp="1616520101532" />
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1616021294918" />
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1616097533367" />
     <state width="838" height="185" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1616125281039" />
     <state width="1396" height="185" key="GridCell.Tab.0.left/0.25.1440.819@0.25.1440.819" timestamp="1616132598269" />
-    <state width="1031" height="206" key="GridCell.Tab.0.right" timestamp="1616518806263">
+    <state width="1396" height="142" key="GridCell.Tab.0.right" timestamp="1616520101533">
       <screen x="0" y="25" width="1440" height="813" />
     </state>
-    <state width="1031" height="206" key="GridCell.Tab.0.right/0.25.1440.813@0.25.1440.813" timestamp="1616518806263" />
+    <state width="1396" height="142" key="GridCell.Tab.0.right/0.25.1440.813@0.25.1440.813" timestamp="1616520101533" />
     <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1616021294919" />
     <state width="1396" height="185" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1616097533368" />
     <state width="838" height="185" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1616125281040" />

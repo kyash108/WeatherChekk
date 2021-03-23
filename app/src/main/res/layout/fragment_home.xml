@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/backgroundimage"
     tools:context=".home">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -26,7 +26,6 @@
         android:hint="City"
         android:inputType="textUri|textShortMessage"
         android:textAlignment="center"
-        android:textAllCaps="true"
         android:textColor="@color/black"
         android:textIsSelectable="false"
         android:textSize="30sp"

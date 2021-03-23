@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    android:foregroundTint="#FBFAFA">
+
+    <ListPreference
+        android:defaultValue="true"
+        android:entries="@array/fontSize"
+        android:entryValues="@array/fontSize"
+        android:hapticFeedbackEnabled="true"
+        android:key="fontSize"
+        android:summary="Adjust the font size"
+        android:title="Font Size" />
+</PreferenceScreen>
