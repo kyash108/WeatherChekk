@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundimage"
     tools:context=".home">
-
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
         android:layout_width="408dp"

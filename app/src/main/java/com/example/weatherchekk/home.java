@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -47,7 +48,6 @@ public class home extends Fragment {
     String cityToronto = "Toronto";
     String city="delhi";
     String apiKey = "b22d2146812e4f4143b2462365bd3706";
-    String acuKey = "ilrmFXBe4oZ0g56gvnu8Kom00jCGt8uN";
     double temperature;
     double temperatureMin;
     double temperatureMax;
@@ -150,20 +150,18 @@ public class home extends Fragment {
 
                     city = response.getString("name");
 
-//                    JSONArray weathers = response.getJSONArray("weather");
-//                    String index = weathers.getString(1);
-
+                    JSONArray weathers = response.getJSONArray("weather");
+                    for (int i = 0; i < weathers.length(); i++) {
+                        JSONObject c = weathers.getJSONObject(i);
+                        desc = c.getString("description");
+                    }
 
                     JSONObject winds = response.getJSONObject("wind");
                     wind = winds.getDouble("speed");
 
                     visibility = response.getDouble("visibility");
                     visibility = visibility/1000;
-
-
-
                     newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -195,8 +193,11 @@ public class home extends Fragment {
 
                     pressureW = mainObj.getInt("pressure");
 
-//                    JSONObject weather = response.getJSONObject("weather");
-//                    descW = weather.getString("description");
+                  JSONArray weathers = response.getJSONArray("weather");
+                    for (int i = 0; i < weathers.length(); i++) {
+                        JSONObject c = weathers.getJSONObject(i);
+                        descW = c.getString("description");
+                    }
 
                     JSONObject winds = response.getJSONObject("wind");
                     windW = winds.getDouble("speed");
@@ -205,8 +206,6 @@ public class home extends Fragment {
                     visibilityW = visibilityW/1000;
 
                     newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -236,8 +235,11 @@ public class home extends Fragment {
 
                     pressureT = mainObj.getInt("pressure");
 
-//                    JSONObject weather = response.getJSONObject("weather");
-//                    descT = weather.getString("description");
+                   JSONArray weathers = response.getJSONArray("weather");
+                    for (int i = 0; i < weathers.length(); i++) {
+                        JSONObject c = weathers.getJSONObject(i);
+                        descT = c.getString("description");
+                    }
 
                     JSONObject winds = response.getJSONObject("wind");
                     windT = winds.getDouble("speed");
@@ -246,8 +248,6 @@ public class home extends Fragment {
                     visibilityT = visibilityT/1000;
 
                     newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -261,7 +261,6 @@ public class home extends Fragment {
             }
         });
         tempSingleton.getInstance(getContext()).getRequestQueue().add(requestT);
-
 
         return view;
     }
