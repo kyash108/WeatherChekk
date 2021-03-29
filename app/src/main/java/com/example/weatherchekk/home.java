@@ -5,35 +5,26 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.weatherchekk.pojo.reminds;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
 
 import static com.example.weatherchekk.MainActivity.fab;
 
@@ -46,7 +37,7 @@ public class home extends Fragment {
     ViewPager2 newViewPager;
     String cityWindsor = "Windsor";
     String cityToronto = "Toronto";
-    String city="delhi";
+    String city="Delhi";
     String apiKey = "b22d2146812e4f4143b2462365bd3706";
     double temperature;
     double temperatureMin;
@@ -129,55 +120,22 @@ public class home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         newViewPager = view.findViewById(R.id.viewPager2);
         newViewPager.setPageTransformer(new ZoomOutPageTransformer());
-//        EditText search;
-//        search = view.findViewById(R.id.search);
+        EditText search;
+        search = view.findViewById(R.id.search);
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+apiKey;
-        String urlW = "https://api.openweathermap.org/data/2.5/weather?q="+ cityWindsor +"&units=metric&appid="+apiKey;
-        String urlT = "https://api.openweathermap.org/data/2.5/weather?q="+ cityToronto +"&units=metric&appid="+apiKey;
-
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONObject mainObj = response.getJSONObject("main");
-                    temperature = mainObj.getDouble("temp");
-                    temperatureMin = mainObj.getDouble("temp_min");
-                    temperatureMax = mainObj.getDouble("temp_max");
-                    humidity = mainObj.getDouble("humidity");
-                    feelslike = mainObj.getDouble("feels_like");
-                    pressure = mainObj.getInt("pressure");
-
-                    city = response.getString("name");
-
-                    JSONArray weathers = response.getJSONArray("weather");
-                    for (int i = 0; i < weathers.length(); i++) {
-                        JSONObject c = weathers.getJSONObject(i);
-                        desc = c.getString("description");
-                    }
-
-                    JSONObject winds = response.getJSONObject("wind");
-                    wind = winds.getDouble("speed");
-
-                    visibility = response.getDouble("visibility");
-                    visibility = visibility/1000;
-                    newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_DONE){
+                    city = search.getText().toString();
+                    requestPage(view);
                 }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Snackbar.make(view, error.toString(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                return false;
             }
         });
-        tempSingleton.getInstance(getContext()).getRequestQueue().add(request);
 
-
+        String urlW = "https://api.openweathermap.org/data/2.5/weather?q="+ cityWindsor +"&units=metric&appid="+apiKey;
+        String urlT = "https://api.openweathermap.org/data/2.5/weather?q="+ cityToronto +"&units=metric&appid="+apiKey;
 
 
         JsonObjectRequest requestW = new JsonObjectRequest(Request.Method.GET, urlW, null, new Response.Listener<JSONObject>() {
@@ -205,7 +163,7 @@ public class home extends Fragment {
                     visibilityW = response.getDouble("visibility");
                     visibilityW = visibilityW/1000;
 
-                    newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
+                    newViewPager.setAdapter(new CustomViewPager2Adapter(getActivity()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -247,7 +205,7 @@ public class home extends Fragment {
                     visibilityT = response.getDouble("visibility");
                     visibilityT = visibilityT/1000;
 
-                    newViewPager.setAdapter(new CustomerViewPager2Adapter(getActivity()));
+                    newViewPager.setAdapter(new CustomViewPager2Adapter(getActivity()));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -265,9 +223,59 @@ public class home extends Fragment {
         return view;
     }
 
-    private class CustomerViewPager2Adapter extends FragmentStateAdapter {
+    public void requestPage(View view){
 
-        public CustomerViewPager2Adapter(@NonNull FragmentActivity fragmentActivity) {
+        String url = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+apiKey;
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONObject mainObj = response.getJSONObject("main");
+                    temperature = mainObj.getDouble("temp");
+                    temperatureMin = mainObj.getDouble("temp_min");
+                    temperatureMax = mainObj.getDouble("temp_max");
+                    humidity = mainObj.getDouble("humidity");
+                    feelslike = mainObj.getDouble("feels_like");
+                    pressure = mainObj.getInt("pressure");
+
+                    city = response.getString("name");
+
+                    JSONArray weathers = response.getJSONArray("weather");
+                    for (int i = 0; i < weathers.length(); i++) {
+                        JSONObject c = weathers.getJSONObject(i);
+                        desc = c.getString("description");
+                    }
+
+                    JSONObject winds = response.getJSONObject("wind");
+                    wind = winds.getDouble("speed");
+
+                    visibility = response.getDouble("visibility");
+                    visibility = visibility/1000;
+
+                    newViewPager.setAdapter(new CustomViewPager2Adapter(getActivity()));
+
+                    newViewPager.getAdapter().notifyDataSetChanged();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Snackbar.make(view, error.toString(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        tempSingleton.getInstance(getContext()).getRequestQueue().add(request);
+
+    }
+
+    private class CustomViewPager2Adapter extends FragmentStateAdapter {
+
+        public CustomViewPager2Adapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
         }
 
