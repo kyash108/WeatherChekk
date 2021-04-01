@@ -37,12 +37,12 @@ public class home extends Fragment {
     ViewPager2 newViewPager;
     String cityWindsor = "Windsor";
     String cityToronto = "Toronto";
-    String city="Delhi";
+    String city="--";
     String apiKey = "b22d2146812e4f4143b2462365bd3706";
     double temperature;
     double temperatureMin;
     double temperatureMax;
-    String desc = "Cloud";
+    String desc = "--";
     int pressure;
     double wind;
     double feelslike;
@@ -151,11 +151,13 @@ public class home extends Fragment {
 
                     pressureW = mainObj.getInt("pressure");
 
-                  JSONArray weathers = response.getJSONArray("weather");
+                    String descriptionW = null;
+                    JSONArray weathers = response.getJSONArray("weather");
                     for (int i = 0; i < weathers.length(); i++) {
                         JSONObject c = weathers.getJSONObject(i);
-                        descW = c.getString("description");
+                        descriptionW = c.getString("description");
                     }
+                    descW = descriptionW.substring(0, 1).toUpperCase() + descriptionW.substring(1).toLowerCase();
 
                     JSONObject winds = response.getJSONObject("wind");
                     windW = winds.getDouble("speed");
@@ -193,11 +195,13 @@ public class home extends Fragment {
 
                     pressureT = mainObj.getInt("pressure");
 
+                    String descriptionT=null;
                    JSONArray weathers = response.getJSONArray("weather");
                     for (int i = 0; i < weathers.length(); i++) {
                         JSONObject c = weathers.getJSONObject(i);
-                        descT = c.getString("description");
+                        descriptionT = c.getString("description");
                     }
+                    descT = descriptionT.substring(0, 1).toUpperCase() + descriptionT.substring(1).toLowerCase();
 
                     JSONObject winds = response.getJSONObject("wind");
                     windT = winds.getDouble("speed");
@@ -241,11 +245,13 @@ public class home extends Fragment {
 
                     city = response.getString("name");
 
+                    String description=null;
                     JSONArray weathers = response.getJSONArray("weather");
                     for (int i = 0; i < weathers.length(); i++) {
                         JSONObject c = weathers.getJSONObject(i);
-                        desc = c.getString("description");
+                        description = c.getString("description");
                     }
+                    desc = description.substring(0, 1).toUpperCase() + description.substring(1).toLowerCase();
 
                     JSONObject winds = response.getJSONObject("wind");
                     wind = winds.getDouble("speed");
@@ -286,11 +292,11 @@ public class home extends Fragment {
 //                return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","UV");
 
                 case 0:
-                    return viewpager2.newInstance(city,"Description\n"+desc,"Pressure\n"+pressure,"Wind\n"+wind+"m/sec",temperature+"\u2103","L"+temperatureMin+"\u2103", "H"+temperatureMax+"\u2103","Feels Like\n"+feelslike+"\u2103","Visibility\n"+visibility+"Km","Humidity\n"+humidity+"%");
+                    return viewpager2.newInstance(city,"Description\n"+desc,"Pressure\n"+pressure,"Wind\n"+wind+"m/sec",temperature+"\u2103","L "+temperatureMin+"\u2103", "H "+temperatureMax+"\u2103","Feels Like\n"+feelslike+"\u2103","Visibility\n"+visibility+"Km","Humidity\n"+humidity+"%");
                 case 1:
-                    return viewpager2.newInstance(cityWindsor,"Description\n"+descW,"Pressure\n"+pressureW,"Wind\n"+windW+"m/sec",temperatureW+"\u2103","L"+temperatureMinW+"\u2103", "H"+temperatureMaxW+"\u2103","Feels Like\n"+feelslikeW+"\u2103","Visibility\n"+visibilityW+"Km","Humidity\n"+humidityW+"%");
+                    return viewpager2.newInstance(cityWindsor,"Description\n"+descW,"Pressure\n"+pressureW,"Wind\n"+windW+"m/sec",temperatureW+"\u2103","L "+temperatureMinW+"\u2103", "H "+temperatureMaxW+"\u2103","Feels Like\n"+feelslikeW+"\u2103","Visibility\n"+visibilityW+"Km","Humidity\n"+humidityW+"%");
                 case 2:
-                    return viewpager2.newInstance(cityToronto,"Description\n"+descT,"Pressure\n"+pressureT,"Wind\n"+windT+"m/sec",temperatureT+"\u2103","L"+temperatureMinT+"\u2103", "H"+temperatureMaxT+"\u2103","Feels Like\n"+feelslikeT+"\u2103","Visibility\n"+visibilityT+"Km","Humidity\n"+humidityT+"%");
+                    return viewpager2.newInstance(cityToronto,"Description\n"+descT,"Pressure\n"+pressureT,"Wind\n"+windT+"m/sec",temperatureT+"\u2103","L "+temperatureMinT+"\u2103", "H "+temperatureMaxT+"\u2103","Feels Like\n"+feelslikeT+"\u2103","Visibility\n"+visibilityT+"Km","Humidity\n"+humidityT+"%");
                 default:
                     return viewpager2.newInstance("Windsor","6:30 AM","6:30Pm","NW 30Km/hr",temperature+"\u2103",temperatureMin+"\u2103","7 \u2103","8 \u2103","16 KM","15%");
             }

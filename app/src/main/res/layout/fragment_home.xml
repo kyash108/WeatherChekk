@@ -23,13 +23,13 @@
         android:alpha=".5"
         android:background="#C8C1C1"
         android:hint="City"
-        android:inputType="textUri|textShortMessage"
+        android:imeOptions="actionDone"
+        android:inputType="textUri|textShortMessage|textCapSentences|textCapWords"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textIsSelectable="false"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:imeOptions="actionDone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -32,4 +32,15 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="cities">Windsor</string>
+    <string name="temp">-1 ℃</string>
+    <string name="low">L-7 ℃</string>
+    <string name="high">H-4℃</string>
+    <string name="desc">Description \nCloudy</string>
+    <string name="pressure">Pressure \n1019</string>
+    <string name="wind">Wind \nNW 6Km/hr</string>
+    <string name="visibility">Visiblity \n16 Km</string>
+    <string name="humid">Humidity \n0%</string>
+    <string name="feelslike">Feels Like \n2.2℃</string>
 </resources>
