@@ -1,5 +1,6 @@
 package com.example.weatherchekk;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,12 +11,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Objects;
+
+import static com.example.weatherchekk.MainActivity.sharedPrefs;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link viewpager2#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class viewpager2 extends Fragment {
+
+    View view;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -97,7 +104,7 @@ public class viewpager2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view =  inflater.inflate(R.layout.fragment_viewpager2, container, false);
+        view =  inflater.inflate(R.layout.fragment_viewpager2, container, false);
 
         if(mParam1 !=null) {
             TextView cityNameHome = view.findViewById(R.id.cityNameHome);
@@ -140,5 +147,84 @@ public class viewpager2 extends Fragment {
             humidity.setText(mParam10);
         }
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        TextView cityNameHome = view.findViewById(R.id.cityNameHome);
+        TextView desc = view.findViewById(R.id.desc);
+        TextView pressure = view.findViewById(R.id.pressure);
+        TextView wind = view.findViewById(R.id.wind);
+        TextView temp = view.findViewById(R.id.temp);
+        TextView low = view.findViewById(R.id.low);
+        TextView high = view.findViewById(R.id.high);
+        TextView feelslike = view.findViewById(R.id.feelslike);
+        TextView visibility = view.findViewById(R.id.visibility);
+        TextView humidity = view.findViewById(R.id.humidity);
+
+        String fontSizeChoice = sharedPrefs.getString("fontSize","20sp");
+        switch (fontSizeChoice){
+            case "18sp" :
+                cityNameHome.setTextSize(18);
+                desc.setTextSize(18);
+                pressure.setTextSize(18);
+                wind.setTextSize(18);
+                temp.setTextSize(18);
+                low.setTextSize(18);
+                high.setTextSize(18);
+                feelslike.setTextSize(18);
+                visibility.setTextSize(18);
+                humidity.setTextSize(18);
+                break;
+            case "20sp" :
+                cityNameHome.setTextSize(20);
+                desc.setTextSize(20);
+                pressure.setTextSize(20);
+                wind.setTextSize(20);
+                temp.setTextSize(20);
+                low.setTextSize(20);
+                high.setTextSize(20);
+                feelslike.setTextSize(20);
+                visibility.setTextSize(20);
+                humidity.setTextSize(20);
+                break;
+            case "24sp" :
+                cityNameHome.setTextSize(24);
+                desc.setTextSize(24);
+                pressure.setTextSize(24);
+                wind.setTextSize(24);
+                temp.setTextSize(24);
+                low.setTextSize(24);
+                high.setTextSize(24);
+                feelslike.setTextSize(24);
+                visibility.setTextSize(24);
+                humidity.setTextSize(24);
+                break;
+        }
+
+
+//        int textStyle = Integer.parseInt(Objects.requireNonNull(sharedPrefs.getString("style", "1")));
+//
+//        switch (textStyle){
+//            case 1 :
+//                cityNameHome.setTypeface(Typeface.defaultFromStyle(textStyle));
+//                desc.setTextSize(18);
+//                pressure.setTextSize(18);
+//                wind.setTextSize(18);
+//                temp.setTextSize(18);
+//                low.setTextSize(18);
+//                high.setTextSize(18);
+//                feelslike.setTextSize(18);
+//                visibility.setTextSize(18);
+//                humidity.setTextSize(18);
+//                break;
+//            case "Cagliostro" :
+//
+//                break;
+//            case "Pacifico" :
+//
+//                break;
+//        }
     }
 }

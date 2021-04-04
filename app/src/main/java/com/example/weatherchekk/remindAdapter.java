@@ -21,6 +21,8 @@ import com.example.weatherchekk.pojo.reminds;
 
 import java.util.ArrayList;
 
+import static com.example.weatherchekk.MainActivity.sharedPrefs;
+
 public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomViewHolder> {
     private ArrayList<reminds> reminders;
     private Context context;
@@ -33,7 +35,7 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
     @NonNull
     @Override
     public remindAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_remind,null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_remind, null);
         view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new remindAdapter.CustomViewHolder(view);
     }
@@ -67,6 +69,8 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
         protected TextView minute;
         protected TextView am;
         protected TextView city;
+        protected TextView dot;
+
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,7 +79,33 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
             this.am = itemView.findViewById(R.id.am);
             this.city = itemView.findViewById(R.id.city);
             this.edit = itemView.findViewById(R.id.edit);
+            this.dot = itemView.findViewById(R.id.dot);
             itemView.setOnClickListener(this);
+
+            String fontSizeChoice = sharedPrefs.getString("fontSize","18sp");
+            switch (fontSizeChoice){
+                case "18sp" :
+                    hour.setTextSize(18);
+                    minute.setTextSize(18);
+                    am.setTextSize(18);
+                    city.setTextSize(18);
+                    dot.setTextSize(18);
+                    break;
+                case "20sp" :
+                    hour.setTextSize(20);
+                    minute.setTextSize(20);
+                    am.setTextSize(20);
+                    city.setTextSize(20);
+                    dot.setTextSize(20);
+                    break;
+                case "24sp" :
+                    hour.setTextSize(24);
+                    minute.setTextSize(24);
+                    am.setTextSize(24);
+                    city.setTextSize(24);
+                    dot.setTextSize(24);
+                    break;
+            }
         }
 
         @Override
@@ -93,5 +123,6 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
                     .setNegativeButton("No", null)
                     .show();
         }
+
     }
 }

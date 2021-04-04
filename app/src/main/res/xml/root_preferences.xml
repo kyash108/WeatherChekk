@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     android:foregroundTint="#FBFAFA">
 
@@ -9,7 +8,25 @@
         android:entries="@array/fontSize"
         android:entryValues="@array/fontSize"
         android:hapticFeedbackEnabled="true"
+        android:icon="@drawable/ic_baseline_format_size_24"
         android:key="fontSize"
         android:summary="Adjust the font size"
         android:title="Font Size" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:icon="@drawable/ic_baseline_image_24"
+        android:key="backgroundImage"
+        android:summary="Turn on for forest background image"
+        android:title="Change background image" />
+
+    <ListPreference
+        android:defaultValue="true"
+        android:entries="@array/fontStyle"
+        android:entryValues="@array/fontStyle"
+        android:hapticFeedbackEnabled="true"
+        android:icon="@drawable/ic_baseline_font_download_24"
+        android:key="fontStyle"
+        android:summary="Change font style"
+        android:title="Font Style" />
 </PreferenceScreen>

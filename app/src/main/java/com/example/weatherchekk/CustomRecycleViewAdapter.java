@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static com.example.weatherchekk.MainActivity.sharedPrefs;
+
 public class CustomRecycleViewAdapter extends RecyclerView.Adapter<CustomRecycleViewAdapter.CustomViewHolder> {
     private ArrayList<Term> terms;
     private Context context;
@@ -54,6 +56,21 @@ public class CustomRecycleViewAdapter extends RecyclerView.Adapter<CustomRecycle
             this.name = itemView.findViewById(R.id.name);
             this.description = itemView.findViewById(R.id.descriptionItem);
 
+            String fontSizeChoice = sharedPrefs.getString("fontSize","18sp");
+            switch (fontSizeChoice){
+                case "18sp" :
+                    description.setTextSize(18);
+                    name.getLayoutParams().height = 200;
+                    break;
+                case "20sp" :
+                    description.setTextSize(20);
+                    name.getLayoutParams().height = 400;
+                    break;
+                case "24sp" :
+                    description.setTextSize(24);
+                    name.getLayoutParams().height = 600;
+                    break;
+            }
         }
     }
 }

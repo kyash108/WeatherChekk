@@ -1,5 +1,4 @@
 package com.example.weatherchekk;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +27,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.example.weatherchekk.MainActivity.fab;
+import static com.example.weatherchekk.MainActivity.sharedPrefs;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +36,7 @@ import static com.example.weatherchekk.MainActivity.fab;
  * create an instance of this fragment.
  */
 public class home extends Fragment {
+    View view;
     ViewPager2 newViewPager;
     String cityWindsor = "Windsor";
     String cityToronto = "Toronto";
@@ -117,7 +120,7 @@ public class home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fab.hide();
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
         newViewPager = view.findViewById(R.id.viewPager2);
         newViewPager.setPageTransformer(new ZoomOutPageTransformer());
         EditText search;
@@ -130,9 +133,11 @@ public class home extends Fragment {
                     city = search.getText().toString();
                     requestPage(view);
                 }
+                search.getText().clear();
                 return false;
             }
         });
+
 
         String urlW = "https://api.openweathermap.org/data/2.5/weather?q="+ cityWindsor +"&units=metric&appid="+apiKey;
         String urlT = "https://api.openweathermap.org/data/2.5/weather?q="+ cityToronto +"&units=metric&appid="+apiKey;
@@ -225,6 +230,18 @@ public class home extends Fragment {
         tempSingleton.getInstance(getContext()).getRequestQueue().add(requestT);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean background = sharedPrefs.getBoolean("backgroundImage",false);
+        if(background == true){
+            view.setBackgroundResource(R.drawable.rainbg);
+        }else {
+            view.setBackgroundResource(R.drawable.backgroundimage);
+        }
     }
 
     public void requestPage(View view){
