@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ import com.example.weatherchekk.pojo.reminds;
 import java.util.ArrayList;
 
 import static com.example.weatherchekk.MainActivity.sharedPrefs;
+import static java.security.AccessController.getContext;
 
 public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomViewHolder> {
     private ArrayList<reminds> reminders;
@@ -105,6 +107,32 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
                     city.setTextSize(24);
                     dot.setTextSize(24);
                     break;
+            }
+
+            String fontFamily = sharedPrefs.getString("fontStyle", "Inder");
+            switch (fontFamily) {
+                case "Inder":
+                    hour.setTypeface(ResourcesCompat.getFont(context, R.font.inder));
+                    minute.setTypeface(ResourcesCompat.getFont(context, R.font.inder));
+                    am.setTypeface(ResourcesCompat.getFont(context, R.font.inder));
+                    city.setTypeface(ResourcesCompat.getFont(context, R.font.inder));
+                    dot.setTypeface(ResourcesCompat.getFont(context, R.font.inder));
+                    break;
+                case "Cagliostro":
+                    hour.setTypeface(ResourcesCompat.getFont(context, R.font.cagliostro));
+                    minute.setTypeface(ResourcesCompat.getFont(context, R.font.cagliostro));
+                    am.setTypeface(ResourcesCompat.getFont(context, R.font.cagliostro));
+                    city.setTypeface(ResourcesCompat.getFont(context, R.font.cagliostro));
+                    dot.setTypeface(ResourcesCompat.getFont(context, R.font.cagliostro));
+                    break;
+                case "Ledger":
+                    hour.setTypeface(ResourcesCompat.getFont(context, R.font.ledger));
+                    minute.setTypeface(ResourcesCompat.getFont(context, R.font.ledger));
+                    am.setTypeface(ResourcesCompat.getFont(context, R.font.ledger));
+                    city.setTypeface(ResourcesCompat.getFont(context, R.font.ledger));
+                    dot.setTypeface(ResourcesCompat.getFont(context, R.font.ledger));
+                    break;
+
             }
         }
 

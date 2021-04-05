@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -71,6 +72,21 @@ public class CustomRecycleViewAdapter extends RecyclerView.Adapter<CustomRecycle
                     name.getLayoutParams().height = 600;
                     break;
             }
+
+            String fontFamily = sharedPrefs.getString("fontStyle", "Inder");
+            switch (fontFamily) {
+                case "Inder":
+                    description.setTypeface(ResourcesCompat.getFont(context, R.font.inder));
+                    break;
+                case "Cagliostro":
+                    description.setTypeface(ResourcesCompat.getFont(context, R.font.cagliostro));
+                    break;
+                case "Ledger":
+                    description.setTypeface(ResourcesCompat.getFont(context, R.font.ledger));
+                    break;
+
+            }
+
         }
     }
 }
