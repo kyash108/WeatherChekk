@@ -2,6 +2,7 @@ package com.example.weatherchekk;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -239,8 +240,16 @@ public class home extends Fragment {
         boolean background = sharedPrefs.getBoolean("backgroundImage",false);
         if(background == true){
             view.setBackgroundResource(R.drawable.rainbg);
+//            AppCompatDelegate
+//                    .setDefaultNightMode(
+//                            AppCompatDelegate
+//                                    .MODE_NIGHT_YES);
         }else {
             view.setBackgroundResource(R.drawable.backgroundimage);
+//            AppCompatDelegate
+//                    .setDefaultNightMode(
+//                            AppCompatDelegate
+//                                    .MODE_NIGHT_NO);
         }
     }
 

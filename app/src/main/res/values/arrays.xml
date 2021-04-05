@@ -7,9 +7,9 @@
     </string-array>
 
     <string-array name="fontStyle">
-        <item>Sans serif</item>
+        <item>Inder</item>
         <item>Cagliostro</item>
-        <item>Pacifico</item>
+        <item>Ledger</item>
 
     </string-array>
 </resources>

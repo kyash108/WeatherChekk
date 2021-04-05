@@ -3,6 +3,7 @@ package com.example.weatherchekk;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -163,9 +164,9 @@ public class viewpager2 extends Fragment {
         TextView visibility = view.findViewById(R.id.visibility);
         TextView humidity = view.findViewById(R.id.humidity);
 
-        String fontSizeChoice = sharedPrefs.getString("fontSize","20sp");
-        switch (fontSizeChoice){
-            case "18sp" :
+        String fontSizeChoice = sharedPrefs.getString("fontSize", "20sp");
+        switch (fontSizeChoice) {
+            case "18sp":
                 cityNameHome.setTextSize(18);
                 desc.setTextSize(18);
                 pressure.setTextSize(18);
@@ -177,7 +178,7 @@ public class viewpager2 extends Fragment {
                 visibility.setTextSize(18);
                 humidity.setTextSize(18);
                 break;
-            case "20sp" :
+            case "20sp":
                 cityNameHome.setTextSize(20);
                 desc.setTextSize(20);
                 pressure.setTextSize(20);
@@ -189,7 +190,7 @@ public class viewpager2 extends Fragment {
                 visibility.setTextSize(20);
                 humidity.setTextSize(20);
                 break;
-            case "24sp" :
+            case "24sp":
                 cityNameHome.setTextSize(24);
                 desc.setTextSize(24);
                 pressure.setTextSize(24);
@@ -203,28 +204,45 @@ public class viewpager2 extends Fragment {
                 break;
         }
 
+        String fontFamily = sharedPrefs.getString("fontStyle", "Inder");
+        switch (fontFamily) {
+            case "Inder":
+                cityNameHome.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                desc.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                pressure.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                wind.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                temp.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                low.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                high.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                feelslike.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                visibility.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                humidity.setTypeface(ResourcesCompat.getFont(getContext(), R.font.inder));
+                break;
+            case "Cagliostro":
+                cityNameHome.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                desc.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                pressure.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                wind.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                temp.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                low.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                high.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                feelslike.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                visibility.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                humidity.setTypeface(ResourcesCompat.getFont(getContext(), R.font.cagliostro));
+                break;
+            case "Ledger":
+                cityNameHome.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                desc.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                pressure.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                wind.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                temp.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                low.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                high.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                feelslike.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                visibility.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                humidity.setTypeface(ResourcesCompat.getFont(getContext(), R.font.ledger));
+                break;
 
-//        int textStyle = Integer.parseInt(Objects.requireNonNull(sharedPrefs.getString("style", "1")));
-//
-//        switch (textStyle){
-//            case 1 :
-//                cityNameHome.setTypeface(Typeface.defaultFromStyle(textStyle));
-//                desc.setTextSize(18);
-//                pressure.setTextSize(18);
-//                wind.setTextSize(18);
-//                temp.setTextSize(18);
-//                low.setTextSize(18);
-//                high.setTextSize(18);
-//                feelslike.setTextSize(18);
-//                visibility.setTextSize(18);
-//                humidity.setTextSize(18);
-//                break;
-//            case "Cagliostro" :
-//
-//                break;
-//            case "Pacifico" :
-//
-//                break;
-//        }
+        }
     }
 }
