@@ -18,3 +18,9 @@ The application allows the user to check the weather of an city using the search
 - Android studio
 - Android emulator/android phone
 
+## Screen shots and Animated GIF’s
+
+- User is presented with the weather details of a City. It is using an API from Open Weather. This home page has 3 pages on it. Where the user can see the weather
+
+<img src="https://user-images.githubusercontent.com/72352678/114511156-88debb80-9c05-11eb-848b-e86823bcc6aa.png" height="400" width="200"/>
+
