@@ -24,3 +24,8 @@ The application allows the user to check the weather of an city using the search
 
 <img src="https://user-images.githubusercontent.com/72352678/114511156-88debb80-9c05-11eb-848b-e86823bcc6aa.png" height="400" width="200"/>
 
+
+- User can add data to the reminders and can update it from the given options.
+
+<img src="https://user-images.githubusercontent.com/72352678/114511654-318d1b00-9c06-11eb-8cd5-1dca3c361f7c.gif" height="400" width="200"/>
+
