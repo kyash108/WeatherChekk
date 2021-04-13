@@ -1,8 +1,7 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.Fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -21,6 +20,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.weatherchekk.R;
+import com.example.weatherchekk.pojo.tempSingleton;
+import com.example.weatherchekk.pojo.viewpager2;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
@@ -37,43 +39,50 @@ import static com.example.weatherchekk.MainActivity.sharedPrefs;
  * create an instance of this fragment.
  */
 public class home extends Fragment {
+
+    /**
+     * Variables for the view pager
+     * @author - Yash Kumar
+     *
+     */
     View view;
     ViewPager2 newViewPager;
     String cityWindsor = "Windsor";
     String cityToronto = "Toronto";
     String city="--";
     String apiKey = "b22d2146812e4f4143b2462365bd3706";
-    double temperature;
-    double temperatureMin;
-    double temperatureMax;
+
+    double temperature = 0.0;
+    double temperatureMin = 0.0;
+    double temperatureMax = 0.0;
     String desc = "--";
-    int pressure;
-    double wind;
-    double feelslike;
-    double visibility;
-    double humidity;
+    int pressure = 0;
+    double wind = 0.0;
+    double feelslike = 0.0;
+    double visibility = 0.0;
+    double humidity = 0.0;
 
 
-    double temperatureW;
-    double temperatureMinW;
-    double temperatureMaxW;
-    String descW;
-    int pressureW;
-    double windW;
-    double feelslikeW;
-    double visibilityW;
-    double humidityW;
+    double temperatureW = 0.0;
+    double temperatureMinW = 0.0;
+    double temperatureMaxW = 0.0;
+    String descW = "--";
+    int pressureW = 0;
+    double windW = 0.0;
+    double feelslikeW = 0.0;
+    double visibilityW = 0.0;
+    double humidityW = 0.0;
 
 
-    double temperatureT;
-    double temperatureMinT;
-    double temperatureMaxT;
-    String descT;
-    int pressureT;
-    double windT;
-    double feelslikeT;
-    double visibilityT;
-    double humidityT;
+    double temperatureT = 0.0;
+    double temperatureMinT = 0.0;
+    double temperatureMaxT = 0.0;
+    String descT = "--";
+    int pressureT = 0;
+    double windT = 0.0;
+    double feelslikeT = 0.0;
+    double visibilityT = 0.0;
+    double humidityT = 0.0;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -115,6 +124,32 @@ public class home extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean background = sharedPrefs.getBoolean("backgroundImage",false);
+
+        /**
+         * Setting background image using shared preference
+         * @author - Yash Kumar
+         *
+         */
+        if (background){
+            view.setBackgroundResource(R.drawable.backgroundimage);
+//            AppCompatDelegate
+//                    .setDefaultNightMode(
+//                            AppCompatDelegate
+//                                    .MODE_NIGHT_YES);
+        }else{
+            view.setBackgroundResource(R.drawable.rainbg);
+//            AppCompatDelegate
+//                    .setDefaultNightMode(
+//                            AppCompatDelegate
+//                                    .MODE_NIGHT_NO);
+        }
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -126,7 +161,11 @@ public class home extends Fragment {
         newViewPager.setPageTransformer(new ZoomOutPageTransformer());
         EditText search;
         search = view.findViewById(R.id.search);
-
+        /**
+         * Search button to search a city's wearther
+         * @author - Yash Kumar
+         *
+         */
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -143,11 +182,20 @@ public class home extends Fragment {
         String urlW = "https://api.openweathermap.org/data/2.5/weather?q="+ cityWindsor +"&units=metric&appid="+apiKey;
         String urlT = "https://api.openweathermap.org/data/2.5/weather?q="+ cityToronto +"&units=metric&appid="+apiKey;
 
-
+        /**
+         * JSON request for first city
+         * @author - Yash Kumar
+         *
+         */
         JsonObjectRequest requestW = new JsonObjectRequest(Request.Method.GET, urlW, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    /**
+                     * Assigning values to the variable from the JSON data received
+                     * @author - Yash Kumar
+                     *
+                     */
                     JSONObject mainObj = response.getJSONObject("main");
                     temperatureW = mainObj.getDouble("temp");
                     temperatureMinW = mainObj.getDouble("temp_min");
@@ -192,6 +240,11 @@ public class home extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    /**
+                     * Assigning values to the variable from the JSON data received
+                     * @author - Yash Kumar
+                     *
+                     */
                     JSONObject mainObj = response.getJSONObject("main");
                     temperatureT = mainObj.getDouble("temp");
                     temperatureMinT = mainObj.getDouble("temp_min");
@@ -233,26 +286,6 @@ public class home extends Fragment {
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        boolean background = sharedPrefs.getBoolean("backgroundImage",false);
-        if(background == true){
-            view.setBackgroundResource(R.drawable.rainbg);
-//            AppCompatDelegate
-//                    .setDefaultNightMode(
-//                            AppCompatDelegate
-//                                    .MODE_NIGHT_YES);
-        }else {
-            view.setBackgroundResource(R.drawable.backgroundimage);
-//            AppCompatDelegate
-//                    .setDefaultNightMode(
-//                            AppCompatDelegate
-//                                    .MODE_NIGHT_NO);
-        }
-    }
-
     public void requestPage(View view){
 
         String url = "https://api.openweathermap.org/data/2.5/weather?q="+ city +"&units=metric&appid="+apiKey;
@@ -261,6 +294,11 @@ public class home extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    /**
+                     * Assigning values to the variable from the JSON data received
+                     * @author - Yash Kumar
+                     *
+                     */
                     JSONObject mainObj = response.getJSONObject("main");
                     temperature = mainObj.getDouble("temp");
                     temperatureMin = mainObj.getDouble("temp_min");
@@ -316,7 +354,11 @@ public class home extends Fragment {
         public Fragment createFragment(int position) {
             switch (position) {
 //                return viewpager2.newInstance("City","Sunrise","Sunset","Wind","Temp","Low","High","Feels Like","Visibility","UV");
-
+                /**
+                 * Adding values to the view pager from the JSON request
+                 * @author - Yash Kumar
+                 *
+                 */
                 case 0:
                     return viewpager2.newInstance(city,"Description\n"+desc,"Pressure\n"+pressure,"Wind\n"+wind+"m/sec",temperature+"\u2103","L "+temperatureMin+"\u2103", "H "+temperatureMax+"\u2103","Feels Like\n"+feelslike+"\u2103","Visibility\n"+visibility+"Km","Humidity\n"+humidity+"%");
                 case 1:
@@ -334,7 +376,11 @@ public class home extends Fragment {
         }
     }
 
-
+    /**
+     * Animation for the card view on reminders page
+     * @author - Yash Kumar
+     *
+     */
     public class ZoomOutPageTransformer implements ViewPager2.PageTransformer {
         private static final float MIN_SCALE = 0.85f;
         private static final float MIN_ALPHA = 0.5f;
@@ -373,4 +419,5 @@ public class home extends Fragment {
             }
         }
     }
+
 }

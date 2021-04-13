@@ -123,8 +123,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="f3a361" />
+                                      <entry key="outputName" value="ic_launchericons" />
                                     </map>
                                   </option>
                                 </PersistentState>

@@ -1,4 +1,4 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.pojo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,11 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weatherchekk.R;
+import com.example.weatherchekk.Term;
+
 import java.util.ArrayList;
 
 import static com.example.weatherchekk.MainActivity.sharedPrefs;
 
 public class CustomRecycleViewAdapter extends RecyclerView.Adapter<CustomRecycleViewAdapter.CustomViewHolder> {
+    /**
+     * recyler view for the credits page
+     * @author - Yash Kumar
+     *
+     */
+
     private ArrayList<Term> terms;
     private Context context;
 
@@ -52,6 +61,11 @@ public class CustomRecycleViewAdapter extends RecyclerView.Adapter<CustomRecycle
         protected ImageView name;
         protected TextView description;
 
+        /**
+         * Adjusting the font size
+         * @author - Yash Kumar
+         *
+         */
         public CustomViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
             this.name = itemView.findViewById(R.id.name);
@@ -61,18 +75,19 @@ public class CustomRecycleViewAdapter extends RecyclerView.Adapter<CustomRecycle
             switch (fontSizeChoice){
                 case "18sp" :
                     description.setTextSize(18);
-                    name.getLayoutParams().height = 200;
                     break;
                 case "20sp" :
                     description.setTextSize(20);
-                    name.getLayoutParams().height = 400;
                     break;
                 case "24sp" :
                     description.setTextSize(24);
-                    name.getLayoutParams().height = 600;
                     break;
             }
-
+            /**
+             * Adjusting the font family
+             * @author - Yash Kumar
+             *
+             */
             String fontFamily = sharedPrefs.getString("fontStyle", "Inder");
             switch (fontFamily) {
                 case "Inder":

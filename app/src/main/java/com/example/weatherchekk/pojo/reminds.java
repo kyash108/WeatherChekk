@@ -4,6 +4,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class reminds implements Parcelable {
+
+    /**
+     * Getter and setters for the reminder page
+     * @author - Yash Kumar
+     *
+     */
+
     private int id;
     private String hour;
     private String minute;

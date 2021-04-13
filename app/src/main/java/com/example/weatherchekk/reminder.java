@@ -1,5 +1,4 @@
 package com.example.weatherchekk;
-
 import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.RequiresApi;
@@ -10,10 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextClock;
+
+import com.example.weatherchekk.Fragments.createupdates;
 import com.example.weatherchekk.pojo.ReminderDatabase;
+import com.example.weatherchekk.pojo.remindAdapter;
 import com.example.weatherchekk.pojo.reminds;
 import java.util.ArrayList;
 import static com.example.weatherchekk.MainActivity.fab;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +26,8 @@ import static com.example.weatherchekk.MainActivity.fab;
  */
 public class reminder extends Fragment {
 
+    View view;
+    TextClock currentTime;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,7 +73,7 @@ public class reminder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_reminder, container, false);
+        view = inflater.inflate(R.layout.fragment_reminder, container, false);
         fab.show();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,11 @@ public class reminder extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.createupdates,extra);
             }
         });
+        /**
+         * Adding data to the recycler view from the database
+         * @author - Yash Kumar
+         *
+         */
         ReminderDatabase db = new ReminderDatabase(getContext());
         ArrayList<reminds> reminders = db.getAllProject();
         db.close();
@@ -84,8 +95,9 @@ public class reminder extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.firstRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new remindAdapter(reminders,getContext()));
-
-
         return view;
     }
+
+
+
 }

@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".createUpdate">
+    tools:context=".Fragments.createupdates">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/timeLayout"
         android:layout_width="match_parent"
         android:layout_height="502dp"
-        android:background="#FE942C"
+        android:background="@color/greenprimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+        <!-- Textview for city name -->
 
         <TextView
             android:id="@+id/cityName"
@@ -22,6 +24,7 @@
             android:layout_height="41dp"
             android:layout_marginBottom="428dp"
             android:text="@string/enter_city"
+            android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +38,8 @@
             android:layout_marginStart="4dp"
             android:autofillHints="Enter City Name"
             android:ems="10"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:hint="@string/enter_city_name"
             android:inputType="textPersonName"
             android:shadowColor="#DCD9D9"
@@ -44,11 +49,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.069" />
 
+        <!-- time picker for select the time -->
+
+
         <TimePicker
             android:id="@+id/timePicker"
             android:layout_width="347dp"
             android:layout_height="343dp"
             android:layout_marginTop="20dp"
+            android:numbersBackgroundColor="@color/white"
+            android:numbersInnerTextColor="@color/greenprimary"
+            android:outlineSpotShadowColor="@color/greenprimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"

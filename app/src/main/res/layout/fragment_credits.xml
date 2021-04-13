@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:orientation="vertical"
-    tools:context=".credits">
+    tools:context=".Fragments.credits">
+
+    <!-- Recyler view for credit page -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"

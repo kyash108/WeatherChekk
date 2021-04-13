@@ -17,7 +17,7 @@
         android:defaultValue="false"
         android:icon="@drawable/ic_baseline_image_24"
         android:key="backgroundImage"
-        android:summary="Turn on for forest background image"
+        android:summary="Turn on to change background image"
         android:title="Change background image" />
 
     <ListPreference

@@ -1,8 +1,10 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.pojo;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
@@ -17,17 +19,22 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.weatherchekk.pojo.ReminderDatabase;
-import com.example.weatherchekk.pojo.reminds;
+import com.example.weatherchekk.Fragments.createupdates;
+import com.example.weatherchekk.R;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import static com.example.weatherchekk.MainActivity.currentTime;
 import static com.example.weatherchekk.MainActivity.sharedPrefs;
-import static java.security.AccessController.getContext;
 
 public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomViewHolder> {
     private ArrayList<reminds> reminders;
     private Context context;
+    public static String currentH;
+    public static String currentM;
+    public static String currentP;
 
     public remindAdapter(ArrayList<reminds> reminders, Context context ){
         this.reminders = reminders;
@@ -49,6 +56,35 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
         holder.minute.setText(reminds.getMinute());
         holder.am.setText(reminds.getAm());
         holder.city.setText(reminds.getCity());
+
+        String currentH = reminders.get(reminders.lastIndexOf(reminds)).getHour();
+        String currentM = reminders.get(reminders.lastIndexOf(reminds)).getMinute();
+        String currentP = reminders.get(reminders.lastIndexOf(reminds)).getAm();
+
+        String stringAlarm = currentH+":"+currentM+currentP;
+        /**
+         * Setting alarm according the current time
+         * @author - Yash Kumar
+         *
+         */
+
+        Ringtone r = RingtoneManager.getRingtone(context,RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE));
+        Timer t = new Timer();
+        t.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if(currentTime.equals(stringAlarm)){
+                    r.play();
+                }else if(!currentTime.equals(stringAlarm)) {
+                    r.stop();
+                }
+            }
+        },0,1000);
+        /**
+         * edit button to edit a reminder
+         * @author - Yash Kumar
+         *
+         */
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +119,11 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
             this.edit = itemView.findViewById(R.id.edit);
             this.dot = itemView.findViewById(R.id.dot);
             itemView.setOnClickListener(this);
-
+            /**
+             * Adjusting the font size
+             * @author - Yash Kumar
+             *
+             */
             String fontSizeChoice = sharedPrefs.getString("fontSize","18sp");
             switch (fontSizeChoice){
                 case "18sp" :
@@ -108,7 +148,11 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
                     dot.setTextSize(24);
                     break;
             }
-
+            /**
+             * Adjusting the font family
+             * @author - Yash Kumar
+             *
+             */
             String fontFamily = sharedPrefs.getString("fontStyle", "Inder");
             switch (fontFamily) {
                 case "Inder":
@@ -134,8 +178,25 @@ public class remindAdapter extends RecyclerView.Adapter<remindAdapter.CustomView
                     break;
 
             }
+//
+//            ConstraintLayout rl = itemView.findViewById(R.id.cardViewCon);
+//            ConstraintLayout rk = itemView.findViewById(R.id.timeLayout);
+//            sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+//            boolean background = sharedPrefs.getBoolean("backgroundImage",false);
+//            if (background){
+//                rl.setBackgroundColor(ContextCompat.getColor(context, R.color.orangeprimary));
+//                rk.setBackgroundColor(ContextCompat.getColor(context, R.color.orangeprimary));
+//            }else{
+//            rl.setBackgroundColor(ContextCompat.getColor(context, R.color.greenprimary));
+//            rk.setBackgroundColor(ContextCompat.getColor(context, R.color.greenprimary));
+//            }
         }
 
+        /**
+         * On click listener to delete a reminder from the table
+         * @author - Yash Kumar
+         *
+         */
         @Override
         public void onClick(View v) {
             new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure you want to delete the reminder ?").setIcon(android.R.drawable.ic_dialog_alert).setPositiveButton("Yes", new DialogInterface.OnClickListener() {

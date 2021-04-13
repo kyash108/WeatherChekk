@@ -1,6 +1,5 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.pojo;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.core.content.res.ResourcesCompat;
@@ -9,10 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Objects;
+import com.example.weatherchekk.R;
 
 import static com.example.weatherchekk.MainActivity.sharedPrefs;
 
@@ -106,7 +104,11 @@ public class viewpager2 extends Fragment {
         // Inflate the layout for this fragment
 
         view =  inflater.inflate(R.layout.fragment_viewpager2, container, false);
-
+        /**
+         * View pager 2 parameters
+         * @author - Yash Kumar
+         *
+         */
         if(mParam1 !=null) {
             TextView cityNameHome = view.findViewById(R.id.cityNameHome);
             cityNameHome.setText(mParam1);
@@ -163,7 +165,11 @@ public class viewpager2 extends Fragment {
         TextView feelslike = view.findViewById(R.id.feelslike);
         TextView visibility = view.findViewById(R.id.visibility);
         TextView humidity = view.findViewById(R.id.humidity);
-
+        /**
+         * Adjusting the font size
+         * @author - Yash Kumar
+         *
+         */
         String fontSizeChoice = sharedPrefs.getString("fontSize", "20sp");
         switch (fontSizeChoice) {
             case "18sp":
@@ -203,7 +209,11 @@ public class viewpager2 extends Fragment {
                 humidity.setTextSize(24);
                 break;
         }
-
+        /**
+         * Adjusting the font family
+         * @author - Yash Kumar
+         *
+         */
         String fontFamily = sharedPrefs.getString("fontStyle", "Inder");
         switch (fontFamily) {
             case "Inder":

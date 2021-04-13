@@ -44,7 +44,11 @@ public class ReminderDatabase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-
+    /**
+     * Adding data to the table
+     * @author - Yash Kumar
+     *
+     */
     public void addProject(reminds project){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -74,7 +78,11 @@ public class ReminderDatabase extends SQLiteOpenHelper {
         db.close();
         return remind;
     }
-
+    /**
+     * Getting data from the table
+     * @author - Yash Kumar
+     *
+     */
     public ArrayList<reminds> getAllProject(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_REMINDER, null);
@@ -91,7 +99,11 @@ public class ReminderDatabase extends SQLiteOpenHelper {
         db.close();
         return reminders;
     }
-
+    /**
+     * Update data in the table
+     * @author - Yash Kumar
+     *
+     */
     public int updateData(reminds Reminds){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();

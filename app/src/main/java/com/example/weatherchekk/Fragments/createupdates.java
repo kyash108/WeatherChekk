@@ -1,4 +1,4 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.Fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
+
+import com.example.weatherchekk.R;
 import com.example.weatherchekk.pojo.ReminderDatabase;
 import com.example.weatherchekk.pojo.reminds;
 import com.google.android.material.snackbar.Snackbar;
@@ -37,7 +39,11 @@ public class createupdates extends Fragment {
 
         fab.hide();
         Button submit = view.findViewById(R.id.submit);
-
+        /**
+         * code to modify button title according to update or create
+         * @author - Yash Kumar
+         *
+         */
         if (getArguments() != null) {
             if (getArguments().getInt(ACTION_TYPE) == UPDATE) {
                 Reminder = getArguments().getParcelable(views);
@@ -52,10 +58,20 @@ public class createupdates extends Fragment {
                 Reminder = new reminds();
                 submit.setText("Add");
             }
+
+            /**
+             * adding data to the table for reminders using submit button
+             * @author - Yash Kumar
+             *
+             */
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    /**
+                     * setting the time to 12 hr
+                     * @author - Yash Kumar
+                     *
+                     */
                     int i = timePicker.getHour();
                     String timeSet;
                     if (i > 12) {
@@ -69,7 +85,11 @@ public class createupdates extends Fragment {
                     }else{
                         timeSet = "AM";
                     }
-
+                    /**
+                     * adding data to the table
+                     * @author - Yash Kumar
+                     *
+                     */
                     Reminder.setCity(city.getText().toString());
                     Reminder.setHour(String.valueOf(i < 10 ? "0" : "") + i);
                     Reminder.setAm(timeSet);
@@ -83,6 +103,7 @@ public class createupdates extends Fragment {
                         db.addProject(Reminder);
                     }
 
+                    db.close();
                     db.close();
                     Navigation.findNavController(view).popBackStack();
                 }

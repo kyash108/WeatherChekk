@@ -1,4 +1,4 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.Fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,8 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.example.weatherchekk.R;
 
 import static com.example.weatherchekk.MainActivity.fab;
 
@@ -69,6 +68,12 @@ public class contact extends Fragment {
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
         fab.hide();
         Button facebook=view.findViewById(R.id.facebook);
+        /**
+         * Intent for facebook
+         * @author - Yash Kumar
+         *
+         */
+
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +82,11 @@ public class contact extends Fragment {
                 startActivity(intent);
             }
         });
+        /**
+         * Intent for instagram
+         * @author - Yash Kumar
+         *
+         */
         Button instagram = view.findViewById(R.id.instagram);
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +96,11 @@ public class contact extends Fragment {
                 startActivity(intent);
             }
         });
+        /**
+         * Intent for linkedin
+         * @author - Yash Kumar
+         *
+         */
         Button linkedin = view.findViewById(R.id.linkedin);
         linkedin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +110,11 @@ public class contact extends Fragment {
                 startActivity(intent);
             }
         });
-
+        /**
+         * Intent for my website
+         * @author - Yash Kumar
+         *
+         */
         Button website = view.findViewById(R.id.website);
         website.setOnClickListener(new View.OnClickListener() {
             @Override

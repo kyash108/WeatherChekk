@@ -1,4 +1,4 @@
-package com.example.weatherchekk;
+package com.example.weatherchekk.Fragments;
 
 import android.os.Bundle;
 
@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.weatherchekk.pojo.CustomRecycleViewAdapter;
+import com.example.weatherchekk.R;
+import com.example.weatherchekk.Term;
 
 import java.util.ArrayList;
 
@@ -60,7 +64,11 @@ public class credits extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    /**
+     * Adding data to the recycler view on the credits page
+     * @author - Yash Kumar
+     *
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,9 +80,9 @@ public class credits extends Fragment {
         ArrayList<Term> terms = new ArrayList<>();
         terms.add(new Term(R.drawable.linkedin, " Picture of- Linkedin Icon \n Photo by:- Freepik \n bit.ly/3lhtvN4"));
         terms.add(new Term(R.drawable.sun, " Picture of- Weather Icon \n Photo by:- Good Ware \n http://bit.ly/2Oo6P1P"));
-        terms.add(new Term(R.drawable.communicate, " Picture of- Contact me Icon \n Photo by:- Srip\n http://bit.ly/3rNPbCW"));
-        terms.add(new Term(R.drawable.research, " Picture of- Credits Icon \n Photo by:- UltimateArm\n https://bit.ly/3bNRUGI"));
-        terms.add(new Term(R.drawable.instagram, " Picture of- Instagram Icon \n Photo by:- Freepik\n https://bit.ly/3bIiNvP"));
+        terms.add(new Term(R.drawable.communicates, " Picture of- Contact me Icon \n Photo by:- Srip\n http://bit.ly/3rNPbCW"));
+        terms.add(new Term(R.drawable.researchs, " Picture of- Credits Icon \n Photo by:- UltimateArm\n https://bit.ly/3bNRUGI"));
+        terms.add(new Term(R.drawable.instagrams, " Picture of- Instagram Icon \n Photo by:- Freepik\n https://bit.ly/3bIiNvP"));
         terms.add(new Term(R.drawable.background, " Picture of- Weather Background\n Photo by:- Frédéric Perez\n http://bit.ly/3bYYUkk"));
         terms.add(new Term(R.drawable.backgroundimage, " Picture of- Weather Background\n Photo by:- De Jesus Benitez\n http://bit.ly/3d5YlES"));
         terms.add(new Term(R.drawable.icon, " Picture of- App Icon\n Photo by:- Those Icons\n https://bit.ly/3wsQEkS"));

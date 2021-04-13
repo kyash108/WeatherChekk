@@ -6,7 +6,6 @@
     android:background="#000000"
     android:orientation="vertical"
     tools:context=".reminder">
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/firstRecycler"
         android:layout_width="match_parent"

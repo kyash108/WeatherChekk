@@ -6,7 +6,7 @@
     app:startDestination="@id/homePage">
     <fragment
         android:id="@+id/homePage"
-        android:name="com.example.weatherchekk.home"
+        android:name="com.example.weatherchekk.Fragments.home"
         android:label="WeatherChekk"
         tools:layout="@layout/fragment_home" />
     <fragment
@@ -20,17 +20,17 @@
     </fragment>
     <fragment
         android:id="@+id/credits"
-        android:name="com.example.weatherchekk.credits"
+        android:name="com.example.weatherchekk.Fragments.credits"
         android:label="Credits"
         tools:layout="@layout/fragment_credits" />
     <fragment
         android:id="@+id/contact"
-        android:name="com.example.weatherchekk.contact"
+        android:name="com.example.weatherchekk.Fragments.contact"
         android:label="Contact Me"
         tools:layout="@layout/fragment_contact" />
     <fragment
         android:id="@+id/createupdates"
-        android:name="com.example.weatherchekk.createupdates"
+        android:name="com.example.weatherchekk.Fragments.createupdates"
         android:label="Reminders"
         tools:layout="@layout/fragment_createupdates" />
 </navigation>
