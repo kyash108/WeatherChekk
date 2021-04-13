@@ -21,7 +21,7 @@ The application allows the user to check the weather of an city using the search
 ## Screen shots and Animated GIF’s
 
 - User is presented with the weather details of a City. It is using an API from Open Weather. This home page has 3 pages on it. Where the user can see the weather
-<img src="https://user-images.githubusercontent.com/72352678/114511156-88debb80-9c05-11eb-848b-e86823bcc6aa.png" height="400" width="200"/>
+<img src="https://github.com/w0749495/WeatherChekk/blob/bed426e59720a927265d39e7a44fe9316d9fe4bd/app/src/main/res/drawable/homegif.gif" height="400" width="200">
 
 - User can add data to the reminders and can update it from the given options.
 <img src="https://user-images.githubusercontent.com/72352678/114511967-9183c180-9c06-11eb-93a4-486c90f3b31a.gif" height="400" width="200"/>
@@ -35,3 +35,13 @@ The application allows the user to check the weather of an city using the search
 
 - User can contact the developer of the app for any information.
 <img src="https://user-images.githubusercontent.com/72352678/114513241-fd1a5e80-9c07-11eb-8c14-d4660e2ccadd.png" height="400" width="200"/>
+
+
+## Database Schema
+|Table Name|
+|----------|
+|ID|
+|Hours|
+|Minutes|
+|AM/PM|
+|City Name|
